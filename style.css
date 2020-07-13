@@ -1,0 +1,24 @@
+input:invalid {
+    border-color: #900;
+    background-color: #FDD;
+}
+input:valid {
+    border-color: rgb(30, 148, 0);
+    background-color: rgb(173, 223, 161);
+}
+input:focus {
+    outline: none;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+input {
+    width: 20%;
+}
+.error{
+    display: flex;
+    background-color: rgb(180, 4, 4);
+    color: white;
+    width: 20%;
+}
