@@ -10,15 +10,15 @@
     <div id="formContainer">
     <form>
         <label for="email">Email:</label>
-        <input id="email" type="email" name="email" required>
+        <input id="email" type="email" name="email" required minlength="8" maxlength="50">
         <span class="error" aria-live="polite"></span>
 
         <label for="country">Country:</label>
-        <input id="country" type="text" required>
+        <input id="country" type="text" pattern="[^0-9]*" minlength="3"required>
         <span class="error" aria-live="polite"></span>
 
         <label for="zipCode">Zip Code:</label>
-        <input id="zipCode" type="text" required>
+        <input id="zipCode" name="zip" type="tel" pattern="[0-9]*" required minlength="5">
         <span class="error" aria-live="polite"></span>
 
         <label for="password">Password:</label>
