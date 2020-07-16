@@ -16,7 +16,6 @@ inputFields.forEach((input)=>{
                 errorMessage[0].innerText = 'Your email address must be at least 5 characters'
                 errorMessage[0].style.display = 'block'
             } else {
-                //email.setCustomValidity("");
                 errorMessage[0].innerHTML = ''
                 errorMessage[0].style.display = 'none'
             }
@@ -30,7 +29,6 @@ inputFields.forEach((input)=>{
                 errorMessage[1].innerText = 'Must be at least 3 characters'
                 errorMessage[1].style.display = 'block'
             }else {
-                //email.setCustomValidity("");
                 errorMessage[1].innerText = ''
                 errorMessage[1].style.display = 'none'
             }
@@ -44,21 +42,39 @@ inputFields.forEach((input)=>{
                 errorMessage[2].innerText = 'Zip Code must be 5 characters long'
                 errorMessage[2].style.display = 'block'
             }else {
-                //email.setCustomValidity("");
                 errorMessage[2].innerText = ''
                 errorMessage[2].style.display = 'none'
             }
         }
 
         if (input.id === 'password' && input.type === 'password' ){
+            if (password.validity.patternMismatch){
+                errorMessage[3].innerText = 'Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters'
+                errorMessage[3].style.display = 'block'
+            }else {
+                errorMessage[3].innerText = ''
+                errorMessage[3].style.display = 'none'
+            }
             
         }
-
         if (input.id === 'passwordConfirmation' && input.type === 'password' ){
-            if (passwordConfirmation.value !== password.value){
+            
+            if (passwordConfirmation.value !== password.value) {
+                errorMessage[4].innerText = 'Your Password doesnt match'
+                errorMessage[4].style.display = 'block'
+                passwordConfirmation.removeAttribute('class','passwordConfirmationValid')
+                passwordConfirmation.setAttribute('class','passwordConfirmationInvalid')
+                console.log(passwordConfirmation.value !== password.value)
+            }else if (passwordConfirmation.value === password.value){
+                errorMessage[4].innerText = ''
+                errorMessage[4].style.display = 'none'
+                passwordConfirmation.setAttribute('class','passwordConfirmationValid')
+                passwordConfirmation.removeAttribute('class','passwordConfirmationInvalid')
                 
             }
+            console.log(`${input[4]}`)
         }
+        
 
     })
 });

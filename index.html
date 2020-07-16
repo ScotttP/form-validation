@@ -22,11 +22,11 @@
         <span class="error" aria-live="polite"></span>
 
         <label for="password">Password:</label>
-        <input id="password" type="password" required>
+        <input id="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" minlength="8"required>
         <span class="error" aria-live="polite"></span>
 
         <label for="passwordConfirmation">Password Confirmation:</label>
-        <input id="passwordConfirmation" type="password" required>
+        <input id="passwordConfirmation" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"minlength="8"required>
         <span class="error" aria-live="polite"></span>
     </form>
     <button type='submit'>Submit</button>
