@@ -59,20 +59,17 @@ inputFields.forEach((input)=>{
         }
         if (input.id === 'passwordConfirmation' && input.type === 'password' ){
             
-            if (passwordConfirmation.value !== password.value) {
+            if (passwordConfirmation.value !== password.value || passwordConfirmation.value.length <= 0 ) {
                 errorMessage[4].innerText = 'Your Password doesnt match'
                 errorMessage[4].style.display = 'block'
-                passwordConfirmation.removeAttribute('class','passwordConfirmationValid')
                 passwordConfirmation.setAttribute('class','passwordConfirmationInvalid')
-                console.log(passwordConfirmation.value !== password.value)
             }else if (passwordConfirmation.value === password.value){
                 errorMessage[4].innerText = ''
                 errorMessage[4].style.display = 'none'
                 passwordConfirmation.setAttribute('class','passwordConfirmationValid')
-                passwordConfirmation.removeAttribute('class','passwordConfirmationInvalid')
                 
             }
-            console.log(`${input[4]}`)
+            
         }
         
 
